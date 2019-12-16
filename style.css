@@ -1,0 +1,201 @@
+/* HTML 5 css reset: https://css-tricks.com/reboot-resets-reasoning/*/
+/*----*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* ----- */
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color:#292929;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.navbar-ul {
+   display: flex;
+   list-style: none;
+   justify-content: space-around;
+   align-items: center;
+   width:50%;
+   height: 80px;
+}
+
+.nav-text{
+    color: white;
+    font-size: 2rem;
+}
+
+.nav-btn {
+    display: none;
+}
+
+.navbar > #nav-check {
+    display: none;
+}
+
+.text-a {
+    color: white;
+    text-decoration:none;
+}
+
+.para {
+    color: black;
+    margin-left: 10px;
+}
+
+.img {
+    width: 25%;
+    border: none;
+    margin: 10px;
+
+}
+
+.font-h {
+    font-size:  3em;
+    color: black;
+    text-align: center;
+    margin-top: 90px;
+    margin-bottom:20px;
+}
+
+.art{
+    width:1000px;
+    border:0.5px solid #292929;
+    padding:20px;
+}
+
+.contain{
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+}
+
+.fig{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+#message {
+    display:none;
+    background: #f1f1f1;
+    color: #000;
+    position: relative;
+    padding: 20px;
+    margin-top: 10px;
+}
+  
+#message p {
+    padding: 10px 35px;
+    font-size: 18px;
+}
+
+.valid {
+    color: green;
+}
+  
+.valid:before {
+    position: relative;
+    left: -35px;
+    content: "✔";
+}
+
+.invalid {
+    color: red;
+}
+  
+.invalid:before {
+    position: relative;
+    left: -35px;
+    content: "✖";
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+  @media (max-width:769px) {
+    .nav-btn {
+      display: inline-block;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+    }
+    #labnav {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      padding: 13px;
+    }
+    #labnav:hover,.navbar  #nav-check:checked ~ #labnav {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    #labnav > span {
+      display: block;
+      width: 25px;
+      height: 10px;
+      border-top: 2px solid #eee;
+    }
+    .navbar-ul{
+      position: absolute;
+      display: block;
+      width: 100%;
+      background-color: #333;
+      height: 0px;
+      transition: all 0.3s ease-in;
+      overflow-y: hidden;
+      top: 80px;
+      left: 0px;
+    }
+    .navbar-ul-li {
+      width: 100%;
+      margin-left:10px;
+      margin-top:5px;
+    }
+    #nav-check:not(:checked) ~ .navbar-ul {
+      height: 0px;
+    }
+    #nav-check:checked ~ .navbar-ul {
+      height: calc(30vh - 50px);
+      overflow-x: hidden;
+    }
+    .navbar{
+        height: 80px;
+    }
+    .img{
+        width:45%
+    }
+  }
